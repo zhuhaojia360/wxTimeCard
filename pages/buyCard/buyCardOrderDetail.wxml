@@ -1,0 +1,27 @@
+<!--pages/buyCard/buyCardOrderDetail.wxml-->
+<view class="orderdetail_wrap">
+    <view class="orderdetail_item">
+        <view class="left">
+            <view class="icon">
+                <image class='icon_img' src="{{info.card_bg_url}}"></image>
+            </view>
+        </view>
+        <view class="right">
+            <view class="order_info">订单号：{{info.listid}}</view>
+            <view class="order_info">购买时间：{{info.buy_time}}</view>
+            <view class="order_info order_price">
+                <!-- <view class="left">￥{{info.buy_price}}</view> -->
+                <view class="right">已付款￥{{info.buy_price}}</view>
+            </view>
+        </view>
+    </view>
+
+    <block wx:for="{{info.cmall_goods_detail_buy_record_resp_list}}" wx:key="order_{{index}}">
+        <view class="order_detail">
+            <view class="order_detail_column">{{item.goods_name}}</view>
+            <view class="order_detail_column">{{item.available_times==0?'不限':item.available_times+'次数'}}</view>
+            <view class="order_detail_column">￥{{item.real_goods_amt}}</view>
+            <view class="order_detail_column">{{item.wx_packet == 2?'已领取':'未领取'}}</view>
+        </view>
+    </block>
+</view>

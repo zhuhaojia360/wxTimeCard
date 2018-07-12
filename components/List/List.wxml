@@ -1,0 +1,4 @@
+<!--components/List/list.wxml-->
+<view class="wx_list">
+  <slot></slot>
+</view>

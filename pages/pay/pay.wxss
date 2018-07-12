@@ -1,0 +1,24 @@
+/* pages/pay/pay.wxss */
+page{background:#429056;}
+.code_section{background:#ffffff;margin:45rpx 30rpx 30rpx 30rpx;height:750rpx;border-radius:7rpx;box-shadow:0 0 1rpx rgba(0, 0, 0, 0.3);}
+.no_enough_balance{display:-webkit-box;-webkit-box-align: center;-webkit-box-pack: center;height:100%;}
+.non_enough_cont .no_enough_msg{font-size:28rpx;color:#999999;}
+.no_enough_btn{margin-top:23rpx;}
+
+.enough_balance{height:100%;position:relative;}
+.enough_balance .barcode_wrap_center{position: absolute;top: 50%;transform: translateY(-50%);width:100%;}
+.scan_number{font-size:32rpx;line-height: 32rpx;text-align:center;padding-top:38rpx;letter-spacing: 10rpx;}
+.scan_barcode{height:170rpx;text-align:center;padding:0 50rpx;margin-top:12rpx;}
+.scan_barcode canvas{height:170rpx;width:550rpx;margin:0 auto;}
+.scan_qrcode{height:330rpx;text-align:center;margin-top:50rpx;}
+.scan_qrcode.scan_qrcode_center{position: absolute;top: 50%;transform: translateY(-50%);width:100%;margin-top:0;}
+.scan_qrcode canvas{width:330rpx;height:330rpx;margin:0 auto;}
+.scan_card_info{position:absolute;bottom:0;left:30rpx;right:30rpx;border-top:1rpx solid #E4E4E4;}
+
+.refresh_wrap{font-size:28rpx;text-align:center;color:#9DA7CF;}
+.refresh_wrap .btn_refresh{
+    display:inline-block;vertical-align: middle;
+    width:30rpx;height:32rpx;margin-right:10rpx;position:relative;top:1rpx;
+}
+.refresh_wrap .btn_refresh image{width:30rpx;height:32rpx;vertical-align: top;}
+.refresh_wrap text{display:inline-block;vertical-align: middle;}

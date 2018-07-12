@@ -1,0 +1,30 @@
+<!--components/NominalValue/NominalValue.wxml-->
+<view class="{{buyNumber>0?'nominal_wrap buy':'nominal_wrap'}}">
+    <view class="nominal_head">
+        <view wx:if="{{buyNumber>0}}" class="badge">{{buyNumber}}</view>
+        <view class="title">
+            <view class="left">
+                {{info.card_config_name}}
+            </view>
+            <view class="right" wx:if="{{info.available_times>0}}">
+                {{info.available_times}}次
+            </view>
+            <view class="right" wx:else>不限</view>
+        </view>
+        <view class="remark {{repertory ? '' : 'none'}}">
+            库存不足
+        </view>
+        <view class="price_text">
+            <text class="price">{{info.card_amt}}元</text>
+            <!-- <text class="discounts_price">{{info.discounts_price}}元</text> -->
+        </view>
+    </view>
+    <view class="nominal_footer">
+        <view class="left" bindtap="_nominalMinusEvent" hidden="{{buyNumber==0}}">
+            <text>-</text>
+        </view>
+        <view class="right" bindtap="_nominalAddEvent">
+            <text>+</text>
+        </view>
+    </view>
+</view>

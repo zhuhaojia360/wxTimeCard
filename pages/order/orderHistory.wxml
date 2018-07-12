@@ -1,0 +1,38 @@
+<!--pages/order/orderHistory.wxml-->
+<view class="orderhistory_wrap">
+    <!-- <view class="userinfo_wrap">
+        <view class="icon">
+            <open-data class='icon_img' type="userAvatarUrl"></open-data>
+        </view>
+        <view class="desc">2018.08.18第一次开卡</view>
+        <view class="desc text_right">目前已使用卡23张</view>
+    </view> -->
+    <view class="order_list_wrap">
+        <List wx:for="{{orderInfoList}}" wx:key="order_{{index}}">
+            <ListItem arrow="right" data-listid="{{item.listid}}" bindtap="jumpToOrderDetail">
+                <view slot="left">
+                    <view class="name" wx:if="{{1===item.type}}">购卡</view>
+                    <view class="name" wx:elif="{{2===item.type}}">充值</view>
+                    <view class="name" wx:elif="{{3===item.type}}">消费</view>
+                    <view class="name" wx:elif="{{4===item.type}}">优惠赠送</view>
+                    <view class="name" wx:elif="{{5===item.type}}">卡赠送</view>
+                    <view class="name" wx:elif="{{6===item.type}}">退款</view>
+                    <view class="name" wx:else>其他</view>
+                    <view class="desc">{{item.trade_time_str}}</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:if="{{1===item.state}}">待支付</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{2===item.state}}">支付成功</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{3===item.state}}">支付失败</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{4===item.state}}">交易成功</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{5===item.state}}">交易失败</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{6===item.state}}">废弃</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:else>其他</view>
+                </view>
+                <view slot="right" data-listid="{{item.listid}}" bindtap="jumpToOrderDetail">
+                    <view class="price" wx:if="{{7===item.consume_type}}">{{(3===item.type||6===item.type)?'-':'+'}}{{item.changed_times}}</view>
+                    <view class="price" wx:else>{{(3===item.type||6===item.type)?'-':'+'}}{{6===item.type?item.refund_amount:item.trade_amount}}</view>
+                    <view class="balance" wx:if="{{7===item.consume_type}}">￥{{item.pay_amount}}</view>
+                </view>
+            </ListItem>
+        </List>
+    </view>
+</view>

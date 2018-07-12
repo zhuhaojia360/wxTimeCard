@@ -1,0 +1,68 @@
+<!--pages/order/orderRecord.wxml-->
+<view class="orderrecord_wrap">
+    <!-- <view class="userinfo_wrap">
+        <view class="icon">
+            <open-data class='icon_img' type="userAvatarUrl"></open-data>
+        </view>
+        <view class="desc">您已开启***卡使用188天</view>
+    </view> -->
+    <view class="usercard_wrap">
+        <view class="usercard">
+            <view class="cardinfo">
+                <text class="no">{{info.prepaid_card_info_item.available_times|| '0'}}</text>
+                <text class="desc">当前余额</text>
+            </view>
+        </view>
+        <view class="usercard splitline">
+            <view class="cardinfo">
+                <text class="no">{{info.consume_available_times||'0'}}</text>
+                <text class="desc">累积消费</text>
+            </view>
+        </view>
+        <view class="usercard">
+            <view class="cardinfo">
+                <text class="no">{{info.recharge_available_times||'0'}}</text>
+                <text class="desc">累积充值</text>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="usercard_desc">次卡(*123456)交易详情</view> -->
+
+    <view class="order_list_wrap">
+        <List wx:for="{{orderInfoList}}" wx:key="order_{{index}}">
+            <ListItem arrow="right" data-listid="{{item.listid}}" bindtap="jumpToOrderDetail">
+                <view slot="left">
+                    <view class="name" wx:if="{{1===item.type}}">购卡</view>
+                    <view class="name" wx:elif="{{2===item.type}}">充值</view>
+                    <view class="name" wx:elif="{{3===item.type}}">消费</view>
+                    <view class="name" wx:elif="{{4===item.type}}">优惠赠送</view>
+                    <view class="name" wx:elif="{{5===item.type}}">卡赠送</view>
+                    <view class="name" wx:elif="{{6===item.type}}">退款</view>
+                    <view class="name" wx:else>其他</view>
+                    <view class="desc">{{item.trade_time_str}}</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:if="{{1===item.state}}">待支付</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{2===item.state}}">支付成功</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{3===item.state}}">支付失败</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{4===item.state}}">交易成功</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{5===item.state}}">交易失败</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:elif="{{6===item.state}}">废弃</view>
+                    <view class="desc" style="margin-left:40rpx;" wx:else>其他</view>
+                </view>
+                <view slot="right">
+                    <view class="price" wx:if="{{7===item.consume_type}}">{{(3===item.type||6===item.type)?'-':'+'}}{{item.changed_times}}</view>
+                    <view class="price" wx:else>{{(3===item.type||6===item.type)?'-':'+'}}{{6===item.type?item.refund_amount:item.trade_amount}}</view>
+                    <view class="balance" wx:if="{{7===item.consume_type}}">￥{{item.pay_amount}}</view>
+                </view>
+            </ListItem>
+        </List>
+    </view>
+
+    <view class="userorder_history">
+        <view class="icon" bindtap="jumpToOrderHistory">
+            <image class='icon_img' src='../../resource/image/clock.png'></image>
+        </view>
+        <view class="desc" bindtap="jumpToOrderHistory">我的订单历史</view>
+    </view>
+</view>
+
+<Dialog isShow="{{isShowDialog}}" title='提示' content='小程序需要您的授权才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent'></Dialog>

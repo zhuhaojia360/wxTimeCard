@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "Dialog":"/components/Dialog/Dialog"
+    },
+    "navigationBarTitleText": "充值"
+}

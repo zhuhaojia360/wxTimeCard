@@ -1,0 +1,9 @@
+/* components/List/ListItem.wxss */
+.bottom_line{border-bottom: 2rpx solid #E4E4E4;}
+.wx_list_item{background:#ffffff;font-size:28rpx;padding:19rpx 28rpx;display:-webkit-box;}
+.wx_list_item_left{-webkit-box-flex: 1;display:block;}
+.wx_list_item_right{display:flex;align-items:center;color:#4F5EFF;}
+/* .wx_list_item_right{display:block;color:#4F5EFF;} */
+/* .wx_list_arrow{display:block;width:12rpx;margin-left:10rpx;} */
+.wx_list_arrow{display:flex;align-items:center;width:12rpx;margin-left:10rpx;}
+.wx_list_arrow .arrow_right{width:12rpx;height:20rpx;}

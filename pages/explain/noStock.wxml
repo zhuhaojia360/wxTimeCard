@@ -1,0 +1,7 @@
+<!--pages/explain/noStock.wxml-->
+<view class="stock_wrap">
+    <view class="icon">
+        <image class='icon_img' src='../../resource/image/out_of_stock.png'></image>
+    </view>
+    <view class="desc">很抱歉，该页面已被商家下架</view>
+</view>

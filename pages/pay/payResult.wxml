@@ -1,0 +1,13 @@
+<!--pages/pay/payResult.wxml-->
+<view class="payresult_wrap">
+    <view class="icon_wrap">
+        <view class="icon">
+            <icon type="success" size="50" color="#19AD19"/>
+            <!-- <icon type="cancel" size="50" color="#EC5B5B"/> -->
+        </view>
+        <view class="desc cancel">支付成功</view>
+    </view>
+    <view class="btn_wrap">
+        <button class="payresult_btn" type="default" plain="{{true}}" bindtap="jumpToBack">完成</button>
+    </view>
+</view>

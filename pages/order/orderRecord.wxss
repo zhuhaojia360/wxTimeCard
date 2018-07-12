@@ -1,0 +1,124 @@
+/* pages/order/orderRecord.wxss */
+.orderrecord_wrap .userinfo_wrap{
+    display: flex;
+    padding: 10rpx 30rpx 25rpx 54rpx;
+}
+.orderrecord_wrap .userinfo_wrap .icon{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.orderrecord_wrap .userinfo_wrap .icon .icon_img{
+    width: 60rpx;
+    height: 60rpx;
+}
+.orderrecord_wrap .userinfo_wrap .desc{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #9B9B9B;
+    margin-left: 30rpx;
+}
+
+.usercard_wrap{
+    display: flex;
+    padding-bottom:55rpx;
+}
+.usercard_wrap .usercard{
+    flex: 1;
+    position: relative;
+}
+.splitline::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-right: 1rpx solid #D6DAFF;
+    height: 40rpx;
+}
+.splitline::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-left: 1rpx solid #D6DAFF;
+    height: 40rpx;
+}
+.usercard_wrap .usercard .cardinfo{
+    text-align: center;
+}
+.usercard_wrap .usercard .cardinfo .no{
+    display: block;
+    font-size: 36rpx;
+    color: #4A4A4A;
+}
+.usercard_wrap .usercard .cardinfo .desc{
+    display: block;
+    margin-top: 13rpx;
+    font-size: 28rpx;
+    color: #9B9B9B;
+}
+.usercard_desc{
+    padding-left: 30rpx;
+    padding-bottom:10rpx;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    color: #4A4A4A;
+    border-bottom:2rpx solid #E4E4E4;
+}
+
+.order_list_wrap{
+    padding-bottom: 150rpx;
+}
+.order_list_wrap .name{
+    font-size: 32rpx;
+    color: #535353;
+    padding-bottom: 22rpx;
+}
+.order_list_wrap .desc{
+    display: inline-block;
+    font-size: 24rpx;
+    color: #9B9B9B;
+}
+.order_list_wrap .price{
+    font-size: 32rpx;
+    color: #4A4A4A;
+    text-align: right;
+}
+.order_list_wrap .balance{
+    font-size: 28rpx;
+    color: #9B9B9B;
+    padding-top: 22rpx;
+    text-align: right;
+}
+
+.userorder_history{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height: 150rpx;
+    background: #FFFFFF;
+}
+.userorder_history .icon{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.userorder_history .icon .icon_img{
+    width: 40rpx;
+    height: 40rpx;
+}
+.userorder_history .desc{
+    margin-left: 16rpx;
+    font-size: 32rpx;
+    color: #524AFE;
+}

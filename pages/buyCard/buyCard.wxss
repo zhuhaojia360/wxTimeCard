@@ -1,0 +1,103 @@
+/* pages/buyCard/buyCard.wxss */
+.card_selector_wrap{height:480rpx;}
+.card_swiper_wrap{position:relative;}
+.card_swiper{height:374rpx;text-align: center;}
+.card_swiper image {height: 100%;width: 624rpx;border-radius:20rpx;}
+.card_swiper swiper-item{
+  position: relative;
+}
+.card_swiper .card_bg_img{
+  box-sizing:border-box;
+  border: 5rpx solid #4F5EFF;
+  /* transition: all .6s; */
+}
+.card_swiper .card_bg_select{
+  position: absolute;
+  top: 10rpx;
+  right: 25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: #4F5EFF;
+  font-size: 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow: hidden;
+}
+.card_swiper .card_bg_select.none{
+  display: none;
+}
+.card_swiper .card_bg_select .card_bg_select_img{
+  width: 21rpx;
+  height: 17rpx;
+}
+.dot_list{position:absolute;left:0;right:0;bottom:-32rpx;display:-webkit-box;-webkit-box-pack: center;}
+.dot_list .dot{margin:0 8rpx;width:28rpx;height:2rpx;background:#D6DAFF;transition: all .6s;}
+.dot_list .dot.on{background:#4F5EFF;}
+
+.buy_card_wrap{
+  padding-bottom: 145rpx;
+}
+.buy_card_wrap .buy_card{
+  padding: 0 40rpx;
+}
+.item_desc .right{
+  font-size:32rpx;
+  line-height:32rpx;
+  color: #4F5EFF;
+  padding-right: 40rpx;
+}
+.buy_card_item{
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.buy_card_item .left{
+  flex: 1;
+}
+.buy_card_item .right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buyCard_footer_wrap{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  background: #ffffff;
+  box-shadow: 4px 0 14px 0 rgba(0,0,0,0.12);
+  font-size: 28rpx;
+  line-height:28rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.buyCard_footer_wrap .head{
+  flex: 0 0 100rpx;
+  display: flex;
+  align-items: center;
+}
+.buyCard_footer_wrap .head .no{
+  color: #4F5EFF;
+}
+.buyCard_footer_wrap .content{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buyCard_footer_wrap .content .symbol{
+  color: #4F5EFF;
+}
+.buyCard_footer_wrap .content .price{
+  color: #4F5EFF;
+  font-size: 42rpx;
+}
+.buyCard_footer_wrap .footer{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

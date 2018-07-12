@@ -1,0 +1,61 @@
+<!--pages/buyCard/buyCard.wxml-->
+<view class="card_selector_wrap">
+    <view class="card_swiper_wrap">
+        <view class="item_desc">
+            <view class="icon">
+                <image class='card_icon' src='../../resource/image/gift.png'></image>
+            </view>
+            <view class="name">选择卡面</view>
+        </view>
+
+        <swiper class="card_swiper" next-margin="50rpx" previous-margin="50rpx" indicator-dots="{{false}}" bindchange="swiperChange">
+            <block wx:for="{{imgUrls}}" wx:key="swiper_item_{{index}}">
+                <swiper-item item-id="{{item.id}}">
+                    <image src="{{item.imgUrl}}" mode="scaleToFill" class="{{index===swiperCurrent?'card_bg_img':''}}" />
+                    <view class="{{index===swiperCurrent?'card_bg_select':'card_bg_select none'}}">
+                        <image class='card_bg_select_img' src='../../resource/image/sele.png'></image>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <view class="dot_list">
+            <block wx:for="{{imgUrls}}" wx:key="dot+{{index}}">
+                <view class="dot {{index===swiperCurrent? 'on' :'' }}"></view>
+            </block>
+        </view>
+    </view>
+</view>
+
+<view class="buy_card_wrap">
+    <view class="item_desc" style="margin-top:20rpx;">
+        <view class="icon">
+            <image class='card_icon' src='../../resource/image/currency_exchange.png'></image>
+        </view>
+        <view class="name">选择卡面值/兑换值</view>
+        <view class="right" bindtap="jumpToBuyOrder">购买历史</view>
+    </view>
+    <view class="buy_card">
+        <view class="buy_card_item" wx:for="{{goodsList}}" wx:for-index="goodsListIndex" wx:for-item="goodsListItem" wx:key='goodsListIndex{{goodsListIndex}}'>
+            <block wx:for="{{goodsListItem}}" wx:for-index="goodsIndex" wx:for-item="goodsItem" wx:key='goodsIndex{{goodsIndex}}'>
+                <view class="{{(goodsIndex%2 == 0) ? 'left':'right'}}">
+                    <NominalValue bind:nominalMinusEvent="nominalMinusEvent" bind:nominalAddEvent="nominalAddEvent" info="{{goodsItem}}"></NominalValue>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
+
+<view class="buyCard_footer_wrap">
+    <view class="head">共
+        <text class="no">{{goodsCount}}</text>份</view>
+    <view class="content">合计:
+        <text class="symbol">￥</text>
+        <text class="price">{{goodsCountAmt}}</text>
+    </view>
+    <view class="footer">
+        <button class="wx_button size_medium" bindtap="buyCard">购买</button>
+    </view>
+</view>
+
+<Dialog isShow="{{isShowDialog}}" title='提示' content='小程序需要您的授权才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent'></Dialog>

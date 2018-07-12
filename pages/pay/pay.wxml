@@ -1,0 +1,42 @@
+<!--pages/pay/pay.wxml-->
+<view class="code_section">
+  <view class="no_enough_balance" wx:if="{{!card.flag}}">
+    <view class="non_enough_cont">
+      <view class="no_enough_msg">余额不足，请先充值!</view>
+      <view class="no_enough_btn">
+        <button class="swift_button size_small roud" hover-class="swift_button_hover" bindtap="jumpToRecharge">充值</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="enough_balance" wx:else>
+    <view class="{{card.payment_type==='BARCODE'?'barcode_wrap_center':''}}">
+      <view class="scan_number" wx:if="{{card.payment_type==='ALLCODE' || card.payment_type==='BARCODE'}}">{{card.ott_code_str || ''}}</view>
+      <view class="scan_barcode" wx:if="{{card.payment_type==='ALLCODE' || card.payment_type==='BARCODE'}}">
+        <canvas canvas-id="barcode" />
+      </view>
+    </view>
+    <view class="scan_qrcode {{card.payment_type==='QRCODE'?'scan_qrcode_center':''}}" wx:if="{{card.payment_type==='ALLCODE' || card.payment_type==='QRCODE'}}">
+      <canvas canvas-id="qrcode" />
+    </view>
+    <view class="scan_card_info">
+      <List>
+        <ListItem>
+          <view slot="left" style="color:#999999;">
+            <text>{{card.card_name}}</text>
+          </view>
+          <view slot="right" style="color:#999999;">{{card.times_limit === 1?'不限':'次数'+card.available_times}}</view>
+        </ListItem>
+      </List>
+    </view>
+  </view>
+</view>
+
+<view class="refresh_wrap">
+  <view class="btn_refresh" bindtap="handleRefreshCode">
+    <image src="../../resource/image/refresh.png"></image>
+  </view>
+  <text>{{ loading ? '加载中' : '每分钟自动更新，请当面使用勿泄漏' }}</text>
+</view>
+
+<Dialog isShow="{{isShowDialog}}" title='提示' content='小程序需要您的授权才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent'></Dialog>

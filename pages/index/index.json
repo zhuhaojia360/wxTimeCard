@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "Dialog":"/components/Dialog/Dialog"
+    }
+}

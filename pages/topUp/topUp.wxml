@@ -1,0 +1,66 @@
+<!--pages/topUp/topUp.wxml-->
+<view class="topup_wrap">
+    <view class="item_desc bg_color">
+        <view class="icon">
+            <image class='card_icon' src='../../resource/image/gift.png'></image>
+        </view>
+        <view class="name">选择卡面</view>
+    </view>
+
+    <view class="topup_item_wrap bg_color">
+        <view class="topup_item" style="margin-bottom: 20rpx;">
+            <view class="topup_column">
+                <view wx:if="{{1===info.card_amt_selected1}}" class="topup_card_wrap {{1===cardSelected ? 'topup_selected': '' }}" bindtap="selectCardTopUp" data-index="{{1}}" data-payamt="{{info.card_amount1}}" data-cardtimes="{{info.card_times1}}">
+                    <view class="no">{{info.card_times1}}次</view>
+                    <view class="price">售价:{{info.card_amount1}}</view>
+                    <view class="check_on"></view>
+                </view>
+            </view>
+            <view class="topup_column column_center">
+                <view wx:if="{{1===info.card_amt_selected2}}" class="topup_card_wrap {{2===cardSelected ? 'topup_selected': '' }}" bindtap="selectCardTopUp" data-index="{{2}}" data-payamt="{{info.card_amount2}}" data-cardtimes="{{info.card_times2}}">
+                    <view class="no">{{info.card_times2}}次</view>
+                    <view class="price">售价:{{info.card_amount2}}</view>
+                    <view class="check_on"></view>
+                </view>
+            </view>
+            <view class="topup_column column_footer">
+                <view wx:if="{{1===info.card_amt_selected3}}" class="topup_card_wrap {{3===cardSelected ? 'topup_selected': '' }}" bindtap="selectCardTopUp" data-index="{{3}}" data-payamt="{{info.card_amount3}}" data-cardtimes="{{info.card_times3}}">
+                    <view class="no">{{info.card_times3}}次</view>
+                    <view class="price">售价:{{info.card_amount3}}</view>
+                    <view class="check_on"></view>
+                </view>
+            </view>
+        </view>
+        <view class="topup_item">
+            <view class="topup_column">
+                <view wx:if="{{1===info.card_amt_selected4}}" class="topup_card_wrap {{4===cardSelected ? 'topup_selected': '' }}" bindtap="selectCardTopUp" data-index="{{4}}" data-payamt="{{info.card_amount4}}" data-cardtimes="{{info.card_times4}}">
+                    <view class="no">{{info.card_times4}}次</view>
+                    <view class="price">售价:{{info.card_amount4}}</view>
+                    <view class="check_on"></view>
+                </view>
+            </view>
+            <view class="topup_column column_center">
+                <view wx:if="{{1===info.card_amt_selected5}}" class="topup_card_wrap {{5===cardSelected ? 'topup_selected': '' }}" bindtap="selectCardTopUp" data-index="{{5}}" data-payamt="{{info.card_amount5}}" data-cardtimes="{{info.card_times5}}">
+                    <view class="no">{{info.card_times5}}次</view>
+                    <view class="price">售价:{{info.card_amount5}}</view>
+                    <view class="check_on"></view>
+                </view>
+            </view>
+            <view class="topup_column column_footer">
+            </view>
+        </view>
+    </view>
+
+    <view class="topup_checkbox_wrap">
+        <view class="{{guideCheck?'topup_checkbox checked':'topup_checkbox'}}" bindtap="isSelectedGuide"></view>
+        <view class="txt">已阅读并同意
+            <text style="color:#4F5EFF;" bindtap="jumpToGuide">《电子卡指引》</text>
+        </view>
+    </view>
+
+    <view class="wx_button_wrap topup_btn bg_color">
+        <button class="wx_button" hover-class="wx_button_hover" bindtap="topUp">支付{{payAmt}}元</button>
+    </view>
+</view>
+
+<Dialog isShow="{{isShowDialog}}" title='提示' content='小程序需要您的授权才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent'></Dialog>

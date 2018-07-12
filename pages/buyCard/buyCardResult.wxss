@@ -1,0 +1,7 @@
+/* pages/buyCard/buyCardResult.wxss */
+.result_top{padding-top:60rpx;text-align:center;background: #fff;}
+.result_top .result_top_icon .result_top_icon_img{width: 90rpx;height: 88rpx;}
+.result_top .result_top_msg{font-size:32rpx;margin-top:14rpx;}
+
+.amount_padin{font-size:32rpx;color:#3B4AFF;margin:0 5rpx 0 20rpx;}
+.amount_text{color: #000;}

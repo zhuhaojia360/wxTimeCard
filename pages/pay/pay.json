@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "List": "/components/List/List",
+        "ListItem": "/components/List/ListItem",
+        "Dialog":"/components/Dialog/Dialog"
+    },
+    "navigationBarTitleText": "买单"
+}

@@ -1,0 +1,85 @@
+/* components/NominalValue/NominalValue.wxss */
+.nominal_wrap{
+    position: relative;
+    width: 316rpx;
+    height: 220rpx;
+    border: 2rpx solid #D6DAFF;
+    border-radius: 22rpx;
+    font-size: 32rpx;
+}
+.nominal_wrap.buy{
+    color:#4F5EFF;
+    border: 2rpx solid #4F5EFF;
+}
+
+.nominal_wrap .badge{
+    position: absolute;
+    right: -25rpx;
+    top: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background: #4F5EFF;
+    color: #FFFFFF;
+    font-size: 32rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.nominal_wrap .nominal_head{
+    height: 150rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.nominal_wrap .nominal_head .title{
+    width: 100%;
+}
+.nominal_wrap .nominal_head .title .left{
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.nominal_wrap .nominal_head .title .right{
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.nominal_wrap .nominal_head .remark{
+    font-size: 20rpx;
+    color: #F66969;
+}
+.nominal_wrap .nominal_head .remark.none{
+    visibility: hidden;
+}
+
+.nominal_wrap .nominal_head .price_text .price{
+    font-weight: 700;
+}
+.nominal_wrap .nominal_head .price_text .discounts_price{
+    text-decoration:line-through;
+    text-decoration-color:#F5A5A5;
+    color: #C6C6C6;
+    margin-left: 20rpx;
+}
+.nominal_wrap .nominal_footer{
+    display: flex;
+    height: 70rpx;
+    text-align:center;
+    font-size:60rpx;
+    line-height:60rpx;
+    border-top: 1rpx solid #E7E7E7;
+}
+.nominal_wrap .nominal_footer .left{
+    flex: 1;
+    overflow: hidden;
+    border-right: 1rpx solid #E7E7E7;
+}
+.nominal_wrap .nominal_footer .right{
+    flex: 1;
+}

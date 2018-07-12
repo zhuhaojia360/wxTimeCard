@@ -1,0 +1,53 @@
+/* pages/order/orderHistory.wxss */
+.orderhistory_wrap .userinfo_wrap{
+    display: flex;
+    padding: 10rpx 30rpx 25rpx 30rpx;
+    border-bottom:2rpx solid #E4E4E4;
+}
+.orderhistory_wrap .userinfo_wrap .icon{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.orderhistory_wrap .userinfo_wrap .icon .icon_img{
+    width: 60rpx;
+    height: 60rpx;
+}
+.orderhistory_wrap .userinfo_wrap .desc{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #9B9B9B;
+    margin-left: 30rpx;
+}
+.orderhistory_wrap .userinfo_wrap .desc.text_right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.order_list_wrap{
+    padding-bottom: 150rpx;
+}
+.order_list_wrap .name{
+    font-size: 32rpx;
+    color: #535353;
+    padding-bottom: 22rpx;
+}
+.order_list_wrap .desc{
+    display: inline-block;
+    font-size: 24rpx;
+    color: #9B9B9B;
+}
+.order_list_wrap .price{
+    font-size: 32rpx;
+    color: #4A4A4A;
+    text-align: right;
+}
+.order_list_wrap .balance{
+    font-size: 28rpx;
+    color: #9B9B9B;
+    padding-top: 22rpx;
+    text-align: right;
+}

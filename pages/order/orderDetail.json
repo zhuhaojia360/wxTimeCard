@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "List": "/components/List/List",
+        "ListItem": "/components/List/ListItem"
+    },
+    "navigationBarTitleText": "交易详情"
+}

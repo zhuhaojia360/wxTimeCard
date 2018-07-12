@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "NominalValue": "/components/NominalValue/NominalValue",
+        "Dialog":"/components/Dialog/Dialog"
+    }
+}

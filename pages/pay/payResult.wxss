@@ -1,0 +1,28 @@
+/* pages/pay/payResult.wxss */
+.payresult_wrap{
+    text-align: center;
+}
+.payresult_wrap .icon_wrap .icon{
+    padding-top: 150rpx;
+}
+.payresult_wrap .icon_wrap .desc{
+    padding-top: 34rpx;
+    font-size: 28rpx;
+    color: #19AD19;
+}
+.payresult_wrap .icon_wrap .desc.cancel{
+    color: #212121;
+}
+.payresult_wrap .btn_wrap{
+    position: absolute;
+    bottom: 240rpx;
+    width:100%;
+}
+.payresult_wrap .btn_wrap .payresult_btn{
+    color: #19AD19;
+    border-radius: 6rpx;
+    border: 1rpx solid #19AD19;
+    width: 304rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+}

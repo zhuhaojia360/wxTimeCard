@@ -1,0 +1,82 @@
+<!--pages/index/index.wxml-->
+<view class="content_wrap">
+    <swiper indicator-dots="{{indicatorDots}}" style='height:443rpx;' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item data-link="{{item.banner_link}}" bindtap="jumpToBbannerLink">
+                <image src="{{item.banner_url}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='line'></view>
+    <view class='content'>
+        <view class='card_content_wrap'>
+            <block wx:for="{{category_resp}}" wx:for-index="categoryIndex" wx:for-item="categoryItem" wx:key='categoryIndex_{{categoryIndex}}'>
+                <view class="item_desc">
+                    <view class="icon">
+                        <image class='card_icon' src='../../resource/image/card.png' style="height: 25rpx;"></image>
+                    </view>
+                    <view class="name">{{categoryItem.item_name}}</view>
+                </view>
+                <view class='card_wrap'>
+                    <view class="card_item" wx:for="{{categoryItem.storage_info_list}}" wx:for-index="storageInfoIndex" wx:for-item="storageInfoItem" wx:key='storageInfoIndex{{storageInfoIndex}}'>
+                        <block wx:for="{{storageInfoItem}}" wx:for-index="storageIndex" wx:for-item="storageItem" wx:key='storageIndex{{storageIndex}}'>
+                            <view class="{{(storageIndex%2 == 0) ? 'left':'right'}}">
+                                <view class="card" data-categoryid="{{categoryItem.pkid}}" data-storageid="{{storageItem.pkid}}" bindtap="jumpToBuyCard">
+                                    <view class="card_img">
+                                        <image class='img' src='{{storageItem.storage_bg_resp_list[0].bg_pic_url}}'></image>
+                                    </view>
+                                    <view class="card_name">{{storageItem.storage_name}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+
+            <!-- <view class="item_desc">
+                <view class="icon">
+                    <image class='card_icon' src='../../resource/image/card.png' style="height: 25rpx;"></image>
+                </view>
+                <view class="name">测试入口</view>
+            </view>
+            <view class='card_wrap'>
+                <view class="card_item">
+                    <view class="right">
+                        <view class="card" bindtap="jumpToTopUp">
+                            <view class="card_img">
+                                <image class='img' src='../../resource/image/card_red.png'></image>
+                            </view>
+                            <view class="card_name">充值</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="card_item">
+                    <view class="left">
+                        <view class="card" bindtap="jumpToOrderRecord">
+                            <view class="card_img">
+                                <image class='img' src='../../resource/image/card_red.png'></image>
+                            </view>
+                            <view class="card_name">交易记录</view>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="card" bindtap="jumpToPay">
+                            <view class="card_img">
+                                <image class='img' src='../../resource/image/card_red.png'></image>
+                            </view>
+                            <view class="card_name">付款</view>
+                        </view>
+                    </view>
+                </view>
+            </view> -->
+
+        </view>
+    </view>
+    <view class='footer'>
+        <view class="txt" bindtap="jumpToMyCard">我的卡包</view>
+        <view class="split"></view>
+        <view class="txt" bindtap="jumpToBuyOrder">购买历史</view>
+    </view>
+</view>
+
+<Dialog isShow="{{isShowDialog}}" title='提示' content='小程序需要您的授权才能提供更好的服务哦' confirmText='知道了' bind:confirmEvent='confirmEvent'></Dialog>

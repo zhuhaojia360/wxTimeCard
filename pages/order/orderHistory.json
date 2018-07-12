@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "List": "/components/List/List",
+        "ListItem": "/components/List/ListItem"
+    },
+    "navigationBarTitleText": "订单历史",
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,102 @@
+/* pages/cardBag/cardBag.wxss */
+page{
+    background: #F0F0F0;
+}
+.cardbag_wrap{
+    padding: 20rpx 32rpx;
+}
+.cardbag_item{
+    position: relative;
+    border-radius: 22rpx;
+    width: 685rpx;
+    height: 240rpx;
+    padding: 25rpx;
+    box-shadow: 0 6rpx 6rpx 0 rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    font-size: 0;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+.cardbag_item .card_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 685rpx;
+    height: 240rpx;
+    z-index:-1;
+}
+.cardbag_item .card_bg .card_bg_img{
+    width: 685rpx;
+    height: 240rpx;
+}
+.cardbag_item .card_info_wrap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 98rpx;
+    z-index:-1;
+}
+.cardbag_item .card_info_wrap .card_info_bg{
+    width: 685rpx;
+    height: 98rpx;
+}
+.cardbag_item .card_info_wrap .card_info_bg .card_info_bg_img{
+    width: 100%;
+    height: 100%;
+}
+.cardbag_item .card_name{
+    display: flex;
+    margin-bottom:65rpx;
+}
+.cardbag_item .card_name .left{
+    flex: 0 0 80rpx;
+    border-radius: 50%;
+    border: 8rpx solid #FFFFFF;
+    overflow: hidden;
+}
+.cardbag_item .card_name .left .card_cion{
+    width: 80rpx;
+    height: 80rpx;
+}
+.cardbag_item .card_name .right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    margin-left: 20rpx;
+}
+
+.cardbag_item .card_info{
+    display: flex;
+    font-size: 28rpx;
+    color: #666666;
+}
+.cardbag_item .card_info .left{
+    flex: 0 0 250rpx;
+}
+.cardbag_item .card_info .right{
+    flex: 1;
+}
+
+.stock_wrap{
+    text-align: center;
+    padding-top: 250rpx;
+}
+.stock_wrap .icon{
+    width: 354rpx;
+    height: 300rpx;
+    margin: 0 auto;
+    font-size: 0;
+}
+.stock_wrap .icon .icon_img{
+    width: 354rpx;
+    height: 300rpx;
+}
+.stock_wrap .desc{
+    font-size:32rpx;
+    color:#595959;
+    padding-top:100rpx;
+}

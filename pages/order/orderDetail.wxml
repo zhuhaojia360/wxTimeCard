@@ -1,0 +1,90 @@
+<!--pages/order/orderDetail.wxml-->
+<view class="orderdetail_wrap">
+    <view class="orderdetail_title">
+        <view class="left" wx:if="{{1===info.type}}">购卡</view>
+        <view class="left" wx:elif="{{2===info.type}}">充值</view>
+        <view class="left" wx:elif="{{3===info.type}}">消费</view>
+        <view class="left" wx:elif="{{4===info.type}}">优惠赠送</view>
+        <view class="left" wx:elif="{{5===info.type}}">卡赠送</view>
+        <view class="left" wx:elif="{{6===info.type}}">退款</view>
+        <view class="left" wx:else>其他</view>
+        <block wx:if="{{7===info.consume_type}}">
+            <view class="right">{{(3===info.type||6===info.type)?'-':'+'}}{{info.changed_times}}</view>
+        </block>
+    </view>
+    <view class="orderdetail">
+        <List>
+            <ListItem bottomline="{{false}}" wx:if="{{info.title!=null}}">
+                <view slot="left">
+                    <view class="name">卡券名称</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.title}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}">
+                <view slot="left">
+                    <view class="name">交易状态</view>
+                </view>
+                <view slot="right">
+                    <view class="desc" wx:if="{{1===info.state}}">待支付</view>
+                    <view class="desc" wx:elif="{{2===info.state}}">支付成功</view>
+                    <view class="desc" wx:elif="{{3===info.state}}">支付失败</view>
+                    <view class="desc" wx:elif="{{4===info.state}}">交易成功</view>
+                    <view class="desc" wx:elif="{{5===info.state}}">交易失败</view>
+                    <view class="desc" wx:elif="{{6===info.state}}">废弃</view>
+                    <view class="desc" wx:else>其他</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{info.card_id!=null}}">
+                <view slot="left">
+                    <view class="name">储值卡号</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.card_id}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}">
+                <view slot="left">
+                    <view class="name">交易时间</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.trade_time_format}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{info.order_ds_value!=null}}">
+                <view slot="left">
+                    <view class="name">订单来源</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.order_ds_value}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}">
+                <view slot="left">
+                    <view class="name">订单号</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.listid}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}">
+                <view slot="left">
+                    <view class="name">支付金额</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.pay_amount}}</view>
+                </view>
+            </ListItem>
+            <ListItem bottomline="{{false}}">
+                <view slot="left">
+                    <view class="name">优惠金额</view>
+                </view>
+                <view slot="right">
+                    <view class="desc">{{info.discount_amount}}</view>
+                </view>
+            </ListItem>
+        </List>
+    </view>
+</view>
+<view class="orderdetail_myCard" bindtap="jumpToCardBag">我的卡包</view>

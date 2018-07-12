@@ -1,0 +1,20 @@
+/* pages/explain/noStock.wxss */
+.stock_wrap{
+    text-align: center;
+    padding-top: 250rpx;
+}
+.stock_wrap .icon{
+    width: 354rpx;
+    height: 300rpx;
+    margin: 0 auto;
+    font-size: 0;
+}
+.stock_wrap .icon .icon_img{
+    width: 354rpx;
+    height: 300rpx;
+}
+.stock_wrap .desc{
+    font-size:32rpx;
+    color:#595959;
+    padding-top:100rpx;
+}

@@ -1,0 +1,36 @@
+<!--pages/cardBag/cardBag.wxml-->
+<view class="cardbag_wrap">
+    <block wx:if="{{cardList.length>0}}">
+        <block wx:for="{{cardList}}" wx:key="{{index}}">
+            <view class="cardbag_item" data-wxpacket="{{item.wx_packet}}" data-cardid="{{item.card_id}}" data-code="{{item.code}}" bindtap="showCardDetail">
+                <view class="card_bg">
+                    <image class="card_bg_img" mode="aspectFill" src="{{item.card_background_url}}"></image>
+                </view>
+                <view class="card_info_wrap">
+                    <view class="card_info_bg">
+                        <image class="card_info_bg_img" mode="aspectFill" src="../../resource/image/card_bottom.png"></image>
+                    </view>
+                </view>
+                <view class="card_name">
+                    <view class="left">
+                        <image class="card_cion" mode="aspectFill" src="{{item.logo}}"></image>
+                    </view>
+                    <view class="right">{{item.card_name}}</view>
+                </view>
+                <view class="card_info">
+                    <view class="left" wx:if="{{item.consume_type === 7}}">{{item.times_limit == 1 ?'不限':'次数'+item.available_times}}</view>
+                    <view class="left" wx:else>￥{{item.balance}}</view>
+                    <view class="right">{{item.codeCnt}}</view>
+                </view>
+            </view>
+        </block>
+    </block>
+    <block wx:else>
+        <view class="stock_wrap">
+            <view class="icon">
+                <image class='icon_img' src='../../resource/image/out_of_stock.png'></image>
+            </view>
+            <view class="desc">当前没有电子卡</view>
+        </view>
+    </block>
+</view>

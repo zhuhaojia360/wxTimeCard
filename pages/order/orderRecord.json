@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "List": "/components/List/List",
+        "ListItem": "/components/List/ListItem",
+        "Dialog":"/components/Dialog/Dialog"
+    },
+    "navigationBarTitleText": "交易记录",
+    "enablePullDownRefresh": true
+}

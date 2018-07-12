@@ -1,0 +1,62 @@
+<!--pages/topUp/topUpResult.wxml-->
+<!--交易成功-->
+<block wx:if="{{info.state == 4}}">
+    <view class="result_top">
+        <view class="result_top_icon">
+            <image class="result_top_icon_img" mode="aspectFill" src="../../resource/image/recharge-success.png"></image>
+        </view>
+        <view class="result_top_msg">
+            <text>充值成功</text>
+        </view>
+    </view>
+
+    <view>
+        <List>
+            <ListItem>
+                <view slot="left">支付金额:
+                    <text class="amount_padin">{{info.order_amount || '0.00'}}元</text>
+                </view>
+                <view slot="right">
+                    <text class="amount_text">到账次数:</text>
+                    <text class="amount_padin">{{goodsCount || '0'}}次</text>
+                </view>
+            </ListItem>
+        </List>
+    </view>
+
+    <view class="wx_button_wrap">
+        <button class="wx_button" hover-class="wx_button_hover" bindtap="jumpToBack">完成</button>
+    </view>
+</block>
+
+<!--交易失败-->
+<block wx:elif="{{info.state == 3}}">
+    <view class="result_top">
+        <view class="result_top_icon">
+            <image class="result_top_icon_img" mode="aspectFill" src="../../resource/image/recharge-success.png"></image>
+        </view>
+        <view class="result_top_msg">
+            <text>充值失败</text>
+        </view>
+    </view>
+
+    <view class="wx_button_wrap">
+        <button class="wx_button" hover-class="wx_button_hover" bindtap="jumpToBack">完成</button>
+    </view>
+</block>
+
+<!--交易超时-->
+<block wx:else>
+    <view class="result_top">
+        <view class="result_top_icon">
+            <image class="result_top_icon_img" mode="aspectFill" src="../../resource/image/recharge-success.png"></image>
+        </view>
+        <view class="result_top_msg">
+            <text>充值中，请稍等！</text>
+        </view>
+    </view>
+
+    <view class="wx_button_wrap">
+        <button class="wx_button" hover-class="wx_button_hover" bindtap="handleRefresh">刷新</button>
+    </view>
+</block>

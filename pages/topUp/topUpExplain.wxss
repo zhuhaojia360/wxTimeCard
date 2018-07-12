@@ -1,0 +1,12 @@
+/* pages/topUp/topUpExplain.wxss */
+.topUpExplain_wrap{
+    padding: 40rpx 30rpx;
+}
+.topUpExplain_wrap .title{
+    font-size: 32rpx;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.topUpExplain_wrap .explain{
+    font-size: 28rpx;
+}
